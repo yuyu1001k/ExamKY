@@ -18,15 +18,9 @@ import tool.Action;
 public class StudentListAction extends Action {
 
 	@Override
-	public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
-		HttpSesstion sesstion = req.getSesstion();
+	public void execute(HttpServletRequest req,HttpServletResponse res) throws Exception{
+		HttpSession sesstion =req.getSession();//セッション
 		Teacher teacher = (Teacher)sesstion.getAttribute("user");
-
-	}
-
-	public void execute(HttpServletRequest req,HttpServletResponse res) throws Exceotion {
-		HttpSession sesstion =req.getSesstion();//セッション
-		Teacher teacher = (Teacher)sesstion.getSttribute("user");
 	}
 
 		String entYearStr="";//入力された学年年度
@@ -36,7 +30,7 @@ public class StudentListAction extends Action {
 		boolean isAttend = false;//在学フラグ
 		List<Student> students = null;//学生リスト
 		LocalDate todayDate = LocalDate.now();
-		int year = todayDate.getyear();
+		int year = todayDate.getYear();
 		StudentDao sDao = new StudentDao();
 		ClassNumDao cNumDao = new ClassNumDao();
 		Map<String, String> errors = new HashMap<>();

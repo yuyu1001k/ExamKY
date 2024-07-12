@@ -3,6 +3,7 @@ package scoremanager.main;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 import bean.Student;
 import bean.Teacher;
 import dao.StudentDao;
@@ -37,7 +38,7 @@ public class StudentCreateExeciteAction extends Action{
 			stu.setName(name);
 			stu.setclassNum(class_num);
 			//boolean isAttend;
-			stu.setAttend(isAttend:true);
+			stu.setAttend(true);
 			stu.setSchool(((Teacher)session.getAttribute("user")).getSchool());
 			StudentDao sDao = new StudentDao();
 			boolean flag = sDao.save(stu);
