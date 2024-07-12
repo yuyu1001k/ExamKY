@@ -18,14 +18,14 @@ import tool.Action;
 public class StudentListAction extends Action {
 
 	@Override
-	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		HttpSesstion sesstion = request.getSesstion();
+	public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
+		HttpSesstion sesstion = req.getSesstion();
 		Teacher teacher = (Teacher)sesstion.getAttribute("user");
 
 	}
 
-	public void execute(HttpServletRequest reqest,HttpServletResponse response) throws Exceotion {
-		HttpSession sesstion =request.getSesstion();//セッション
+	public void execute(HttpServletRequest req,HttpServletResponse res) throws Exceotion {
+		HttpSession sesstion =req.getSesstion();//セッション
 		Teacher teacher = (Teacher)sesstion.getSttribute("user");
 	}
 
