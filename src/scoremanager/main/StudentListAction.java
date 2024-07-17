@@ -43,6 +43,7 @@ List<String> list = cNumDao.filter(teacher.getSchool());
 if (entYearStr != null) {
 //数値に変換
 entYear = Integer.parseInt(entYearStr);
+
 }
 if (entYear != 0 && !classNum. equals("0")) {
 //入学年度とクラス番号を指定
