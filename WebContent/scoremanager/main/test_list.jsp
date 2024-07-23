@@ -16,7 +16,7 @@
 		<!-- 科目検索管理 -->
 			<form action="TestListSubjectExecute.action" method="get">
 				<div class="row border mx-3 mb-3 py-2 align-items-center rounded" id="filter">
-					<!-- 科目情報 -->
+					科目情報
 					<div class="col-2">
 						<label class="form-label" for="student-f1-select">入学年度 </label>
 						<select class="form-select " id="student-f1-select" name="f1">
@@ -47,21 +47,30 @@
 							</c:forEach>
 						</select>
 					</div>
-					<div class="col-2">
-						<label class="form-label" for="student-f2-select">回数</label>
-						<select class="form-select " id="student-f2-select" name="f4">
-							<option value="0">--------</option>
-							<c:forEach var="num" items="${class_num_set}">
-								<%-- 現在のnumと選択されていたf4が一致していた場合selectedを追記 --%>
-								<option value="${num}" <c:if test="${num==f4}">selected</c:if>>${num}</option>
-							</c:forEach>
-						</select>
-					</div>
 
 					<div class="col-2 text-center">
 						<button class="btn btn-secondary" id="filter-button">検索</button>
 					</div>
 					<div class="mt-2 text-warning">${errors.get("filter")}</div>
+				</div>
+			</form>
+		<!-- 学生検索画面 -->
+			<form action="TestListSubjectExecute.action" method="get">
+				<div class="row border mx-3 mmb-3 py-2 align-items-center rounded" id="filter">
+					学生情報
+					<div class="col-2">
+						<label class="form-label" for="student-f1-select">学生番号 </label>
+						<select class="form-select" id="student-f1-select" name="f1">
+							<option value="0">--------</option>
+							<c:forEach var="year" items="${ent_year_set}">
+								<%-- 現在のyearと選択されていたf1が一致していた場合selectedを追記 --%>
+								<option value="${year}" <c:if test="${year==f1}">selected</c:if>>${year}</option>
+							</c:forEach>
+						</select>
+					</div>
+					<div class="col-2 text-center">
+						<button class="btn btn-secondary" id="filter-button">検索</button>
+					</div>
 				</div>
 			</form>
 		<div class="mt-2 text-warning">科目情報を選択または学生情報を入力して検索ボタンをクリックしてください</div>

@@ -36,7 +36,7 @@ public class StudentCreateExeciteAction extends Action{
 			stu.setEntYear(ent_year);
 			stu.setNo(no);
 			stu.setName(name);
-			stu.setclassNum(class_num);
+			stu.setClassNum(class_num);
 			//boolean isAttend;
 			stu.setAttend(true);
 			stu.setSchool(((Teacher)session.getAttribute("user")).getSchool());

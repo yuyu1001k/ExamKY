@@ -109,7 +109,7 @@ public class TestDao extends Dao {
 			student.setNo(rSet.getString("st_no"));
 			student.setName(rSet.getString("st_name"));
 			student.setEntYear(rSet.getInt("st_ent_year"));
-			student.setclassNum(rSet.getString("st_class_num"));
+			student.setClassNum(rSet.getString("st_class_num"));
 			student.setAttend(rSet.getBoolean("st_is_attend"));
 			student.setSchool(school);
 
@@ -275,7 +275,7 @@ public class TestDao extends Dao {
 				statement.setString(3, test.getStudent().getNo());
 				statement.setString(4, test.getSubject().getCd());
 				statement.setString(5, test.getSchool().getCd());
-				statement.setString(6, test.getStudent().getclassNum());
+				statement.setString(6, test.getStudent().getClassNum());
 			} else {
 				// 成績が存在する場合
 				// プリペアードステートメントにUPDATE文をセット
