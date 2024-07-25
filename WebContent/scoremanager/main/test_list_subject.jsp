@@ -14,9 +14,9 @@
 		<section class="me-4">
 			<h2 class="h3 mb-3 fw-norma bg-secondary bg-opacity-10 py-2 px-4">成績管理</h2>
 		<!-- 科目検索管理 -->
-			<form action="TestRegist.action" method="get">
+			<form action="TestListSubjectExecute.action" method="get">
 				<div class="row border mx-3 mb-3 py-2 align-items-center rounded" id="filter">
-					<!-- 科目情報 -->
+					科目情報
 					<div class="col-2">
 						<label class="form-label" for="student-f1-select">入学年度 </label>
 						<select class="form-select " id="student-f1-select" name="f1">
@@ -47,16 +47,6 @@
 							</c:forEach>
 						</select>
 					</div>
-					<div class="col-2">
-						<label class="form-label" for="student-f2-select">回数</label>
-						<select class="form-select " id="student-f2-select" name="f4">
-							<option value="0">--------</option>
-							<c:forEach var="num" items="${num_set}">
-								<%-- 現在のnumと選択されていたf4が一致していた場合selectedを追記 --%>
-								<option value="${num}" <c:if test="${num==f4}">selected</c:if>>${num}</option>
-							</c:forEach>
-						</select>
-					</div>
 
 					<div class="col-2 text-center">
 						<button class="btn btn-secondary" id="filter-button">検索</button>
@@ -64,15 +54,34 @@
 					<div class="mt-2 text-warning">${errors.get("filter")}</div>
 				</div>
 			</form>
+		<!-- 学生検索画面 -->
+			<form action="TestListStudentExecute.action" method="get">
+				<div class="row border mx-3 mmb-3 py-2 align-items-center rounded" id="filter">
+					学生情報
+					<div class="col-2">
+						<label class="form-label" for="student-f1-select">学生番号 </label>
+						<select class="form-select" id="student-f1-select" name="f1">
+							<option value="0">--------</option>
+							<c:forEach var="year" items="${ent_year_set}">
+								<%-- 現在のyearと選択されていたf1が一致していた場合selectedを追記 --%>
+								<option value="${year}" <c:if test="${year==f1}">selected</c:if>>${year}</option>
+							</c:forEach>
+						</select>
+					</div>
+					<div class="col-2 text-center">
+						<button class="btn btn-secondary" id="filter-button">検索</button>
+					</div>
+				</div>
+			</form>
+		<div class="mt-2 text-warning">科目情報を選択または学生情報を入力して検索ボタンをクリックしてください</div>
 			<c:choose>
 				<c:when test="${tests.size()>0}">
-					<div>検索結果：${tests.size()}件</div>
+					<div>科目：${subject.name}</div>
 					<table class="table table-hover">
 						<tr>
 							<th>入学年度</th>
 							<th>クラス</th>
-							<th>科目</th>
-							<th>回数</th>
+							<th>学生番号</th>
 							<th></th>
 							<th></th>
 						</tr>
@@ -80,14 +89,17 @@
 							<tr>
 								<td>${test.entYear}</td>
 								<td>${test.classNum}</td>
-								<td>${test.subject}</td>
-								<td>${test.num}</td>
+								<td>${test.studentNo}</td>
+								<td class="text-center">
+								</td>
 							</tr>
 						</c:forEach>
 					</table>
 				</c:when>
+				<c:otherwise>
+					<div>学生情報が存在しませんでした</div>
+				</c:otherwise>
 			</c:choose>
-		<div class="mt-2 text-warning">科目情報を選択または学生情報を入力して検索ボタンをクリックしてください</div>
 		</section>
 	</c:param>
 </c:import>

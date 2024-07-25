@@ -55,7 +55,7 @@
 				</div>
 			</form>
 		<!-- 学生検索画面 -->
-			<form action="TestListSubjectExecute.action" method="get">
+			<form action="TestListStudentExecute.action" method="get">
 				<div class="row border mx-3 mmb-3 py-2 align-items-center rounded" id="filter">
 					学生情報
 					<div class="col-2">

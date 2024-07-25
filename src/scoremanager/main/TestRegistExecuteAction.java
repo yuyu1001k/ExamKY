@@ -76,7 +76,7 @@ public class TestRegistExecuteAction extends Action{
 		// 成鉄リストから成鉄を保存
 		testDao. save(gradeList);
 
-		// 完了ベージにフォワード
+		// 完了ぺージにフォワード
 		req.getRequestDispatcher("test_regist_done.jsp").forward(req, res);
 
 	}

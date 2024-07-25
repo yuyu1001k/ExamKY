@@ -1,4 +1,4 @@
-<%-- 科目別成績一覧 --%>
+<%-- 成績一覧JSP --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -55,7 +55,7 @@
 				</div>
 			</form>
 		<!-- 学生検索画面 -->
-			<form action="TestListSubjectExecute.action" method="get">
+			<form action="TestListStudentExecute.action" method="get">
 				<div class="row border mx-3 mmb-3 py-2 align-items-center rounded" id="filter">
 					学生情報
 					<div class="col-2">
@@ -77,3 +77,6 @@
 		</section>
 	</c:param>
 </c:import>
+
+
+

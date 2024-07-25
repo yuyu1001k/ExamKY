@@ -37,7 +37,7 @@
 
 		<br>
         <label>在学中</label>
-        	<input type="checkbox" name="si_attend">
+        	<input type="checkbox" name="is_attend">
         <br>
         <input type="submit" value="変更">
         <br>
